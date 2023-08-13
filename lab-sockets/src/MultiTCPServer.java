@@ -1,0 +1,24 @@
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class MultiTCPServer {
+    public static void main(String args[]) {
+        try {
+            int serverPort = 6666; // the server port
+            ServerSocket serverSocket = new ServerSocket(serverPort);
+            while (serverSocket.isBound()) {
+                System.out.println("Aguardando conexao no endereco: " + InetAddress.getLocalHost() + ":" + serverPort);
+                Socket clientSocket = serverSocket.accept();
+                ClientHandler handler = new ClientHandler(clientSocket);
+                handler.start();
+                System.out
+                        .println("Conexao feita com: " + clientSocket.getInetAddress() + ":" + clientSocket.getPort());
+            }
+            serverSocket.close();
+        } catch (IOException e) {
+            System.out.println("Listen socket:" + e.getMessage());
+        }
+    }
+}
