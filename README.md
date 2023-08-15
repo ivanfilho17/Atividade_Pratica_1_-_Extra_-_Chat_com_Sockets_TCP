@@ -1,7 +1,7 @@
 # Atividade_Pratica_1_-_Extra_-_Chat_com_Sockets_TCP
 
 
-Apartir de algumas modificações no código do cliente e servidor TCP da Prática 1, foi desenvolvido um chat simples em linha de comando, onde os clientes podem se conectar a um servidor e trocar mensagens entre si, com cada mensagem exibindo a identificação do cliente que a enviou. O servidor retransmite essas mensagens para todos os clientes conectados, criando um ambiente de chat em grupo.
+A partir de algumas modificações no código do cliente e servidor TCP da Prática 1, foi desenvolvido um chat simples em linha de comando, onde os clientes podem se conectar a um servidor e trocar mensagens entre si, com cada mensagem exibindo a identificação do cliente que a enviou. O servidor retransmite essas mensagens para todos os clientes conectados, criando um ambiente de chat em grupo.
 
 Explicação do que foi feito/modificado:
 
