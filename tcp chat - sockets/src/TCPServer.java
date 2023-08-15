@@ -6,7 +6,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SimpleTCPServer {
+public class TCPServer {
     private ServerSocket serverSocket;
     private List<Socket> connectedClients = new ArrayList<>();
 
@@ -59,7 +59,7 @@ public class SimpleTCPServer {
     public static void main(String[] args) {
         int serverPort = 6666;
         try {
-            SimpleTCPServer server = new SimpleTCPServer();
+            TCPServer server = new TCPServer();
             server.start(serverPort);
         } catch (IOException e) {
             e.printStackTrace();

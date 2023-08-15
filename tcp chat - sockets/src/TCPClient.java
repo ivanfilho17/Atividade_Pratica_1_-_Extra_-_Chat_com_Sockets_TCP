@@ -4,14 +4,14 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class SimpleTCPClient {
+public class TCPClient {
     private Socket socket;
     private DataInputStream input;
     private DataOutputStream output;
     private String clientName; // Nome do cliente
 
-    public SimpleTCPClient(String name) {
-        synchronized (SimpleTCPClient.class) {
+    public TCPClient(String name) {
+        synchronized (TCPClient.class) {
             clientName = name;
         }
     }
@@ -68,8 +68,8 @@ public class SimpleTCPClient {
         try {
             System.out.print("Digite o nome do cliente: ");
             String clientName = scanner.nextLine();
-            
-            SimpleTCPClient client = new SimpleTCPClient(clientName);
+
+            TCPClient client = new TCPClient(clientName);
             client.start(serverIp, serverPort);
         } catch (IOException e) {
             e.printStackTrace();
