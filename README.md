@@ -6,8 +6,7 @@ Apartir de algumas modificações no código do cliente e servidor TCP da Práti
 Explicação do que foi feito/modificado:
 
 1. Clientes Identificados por Nome:
-    - A classe "SimpleTCPClient" que agora se chama "TCPClient" foi modificada para que cada cliente seja identificado por um   
-      nome fornecido pelo usuário.
+    - A classe "SimpleTCPClient" que agora se chama "TCPClient" foi modificada para que cada cliente seja identificado por um           nome fornecido pelo usuário.
     - O nome do cliente é passado como argumento para o construtor da classe "TCPClient.
     - Esse nome é utilizado como identificador nas mensagens enviadas pelo cliente.
 
@@ -17,21 +16,19 @@ Explicação do que foi feito/modificado:
     - O servidor, por sua vez, retransmite as mensagens recebidas para todos os clientes conectados.
 
 3. Cliente Lidando com Mensagens:
-  - Cada cliente possui uma thread para ler e exibir mensagens enviadas pelo servidor.
-  - Um loop contínuo aguarda a entrada do usuário para enviar mensagens para o servidor. Cada mensagem é prefixada com o nome do      cliente.
+      - Cada cliente possui uma thread para ler e exibir mensagens enviadas pelo servidor.
+      - Um loop contínuo aguarda a entrada do usuário para enviar mensagens para o servidor. Cada mensagem é prefixada com o nome         do cliente.
 
 4. Servidor Lidando com Clientes:
-  - O servidor mantém uma lista de clientes conectados em uma lista chamada "connectedClients".
-  - Quando um cliente se conecta, o servidor cria uma nova thread para lidar com as mensagens desse cliente.
-  - Cada thread de cliente lê as mensagens enviadas pelo cliente e retransmite essas mensagens para todos os clientes conectados.
+      - O servidor mantém uma lista de clientes conectados em uma lista chamada "connectedClients".
+      - Quando um cliente se conecta, o servidor cria uma nova thread para lidar com as mensagens desse cliente.
+      - Cada thread de cliente lê as mensagens enviadas pelo cliente e retransmite essas mensagens para todos os clientes                 conectados.
 
 5. Sincronização Adequada:
-  - O uso de synchronized no construtor da classe SimpleTCPClient garante que o contador de clientes seja atualizado de forma     
-    segura, evitando condições de corrida.
+      - O uso de synchronized no construtor da classe SimpleTCPClient garante que o contador de clientes seja atualizado de forma         segura, evitando condições de corrida.
 
 6. Tratamento de Exceções:
-  - Foram adicionados tratamentos de exceção adequados em locais relevantes, como na criação do "Scanner" e no fechamento de     
-    fluxos e sockets.
+      - Foram adicionados tratamentos de exceção adequados em locais relevantes, como na criação do "Scanner" e no fechamento de          fluxos e sockets.
 
 7. Loop Infinito:
-  - Tanto os clientes quanto o servidor estão em loops infinitos para manter a comunicação ativa e contínua.
+      - Tanto os clientes quanto o servidor estão em loops infinitos para manter a comunicação ativa e contínua.
