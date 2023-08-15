@@ -6,14 +6,15 @@ Apartir de algumas modificações no código do cliente e servidor TCP da Práti
 Explicação do que foi feito/modificado:
 
 1. Clientes Identificados por Nome:
-  - A classe "SimpleTCPClient" que agora se chama "TCPClient" foi modificada para que cada cliente seja identificado por um nome      fornecido pelo usuário.
-  - O nome do cliente é passado como argumento para o construtor da classe "TCPClient.
-  - Esse nome é utilizado como identificador nas mensagens enviadas pelo cliente.
+    - A classe "SimpleTCPClient" que agora se chama "TCPClient" foi modificada para que cada cliente seja identificado por um   
+      nome fornecido pelo usuário.
+    - O nome do cliente é passado como argumento para o construtor da classe "TCPClient.
+    - Esse nome é utilizado como identificador nas mensagens enviadas pelo cliente.
 
 2. Clientes e Servidor Enviando e Recebendo Mensagens:
-  - Tanto os clientes quanto o servidor utilizam fluxos de entrada e saída de dados ("DataInputStream" e "DataOutputStream") para     trocar mensagens.
-  - Os clientes enviam suas mensagens para o servidor através do canal de saída e o servidor recebe essas mensagens através do        canal de entrada.
-  - O servidor, por sua vez, retransmite as mensagens recebidas para todos os clientes conectados.
+    - Tanto os clientes quanto o servidor utilizam fluxos de entrada e saída de dados ("DataInputStream" e "DataOutputStream")          para trocar mensagens.
+    - Os clientes enviam suas mensagens para o servidor através do canal de saída e o servidor recebe essas mensagens através do        canal de entrada.
+    - O servidor, por sua vez, retransmite as mensagens recebidas para todos os clientes conectados.
 
 3. Cliente Lidando com Mensagens:
   - Cada cliente possui uma thread para ler e exibir mensagens enviadas pelo servidor.
